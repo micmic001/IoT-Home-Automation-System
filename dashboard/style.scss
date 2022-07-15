@@ -1,5 +1,23 @@
-header {background-color: aqua;}
-body {background-color: aqua;}
+$color1:#304ffe;
+$color2:#ff6d00;
+$color3: #e53935;
+$color4: #aa00ff;
+$color5: #ffea00;
+$color6: #00c853;
+
+.color1{background-color: $color1;}
+.color2{background-color: $color2;}
+.color3{background-color: $color3;}
+.color4{background-color: $color4;}
+.color5{background-color: $color5;}
+.color6{background-color: $color6;}
+
+.global-height{
+    height: 100vh;
+}
+.global-width{
+    width: 100vh;
+}
 
 $size__site_content_width: 1024px;
 

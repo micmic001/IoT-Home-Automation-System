@@ -1,9 +1,33 @@
-header {
-  background-color: aqua;
+.color1 {
+  background-color: #304ffe;
 }
 
-body {
-  background-color: aqua;
+.color2 {
+  background-color: #ff6d00;
+}
+
+.color3 {
+  background-color: #e53935;
+}
+
+.color4 {
+  background-color: #aa00ff;
+}
+
+.color5 {
+  background-color: #ffea00;
+}
+
+.color6 {
+  background-color: #00c853;
+}
+
+.global-height {
+  height: 100vh;
+}
+
+.global-width {
+  width: 100vh;
 }
 
 /* Media Queries */
