@@ -1,0 +1,23 @@
+header {
+  background-color: aqua;
+}
+
+body {
+  background-color: aqua;
+}
+
+/* Media Queries */
+#masthead {
+  background: white;
+  border-bottom: 1px solid #eee;
+  height: 90px;
+  padding: 0 20px;
+}
+@media (max-width: 667px), (min-width: 1025px) {
+  #masthead {
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

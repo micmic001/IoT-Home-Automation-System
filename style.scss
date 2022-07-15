@@ -1,0 +1,44 @@
+header {background-color: aqua;}
+body {background-color: aqua;}
+
+$size__site_content_width: 1024px;
+
+/* Media Queries */
+$media_queries : (
+    'mobile'    : (max-width: 667px),
+    'tablet'    : (min-width: 668px) and (max-width: $size__site_content_width),
+    'desktop'   : (min-width: ($size__site_content_width + 1)),
+    'retina2'   : (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi),
+    'retina3'   : (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 288dpi),
+    'landscape' : (orientation:landscape),
+    'portrait'  : (orientation:portrait)
+);
+
+@mixin for_breakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+
+}
+#masthead {
+    background: white;
+    border-bottom:1px solid #eee;
+    height: 90px;
+    padding: 0 20px;
+    @include for_breakpoint(mobile desktop) {
+        height:70px;
+        position:fixed;
+        width:100%;
+        top:0;
+    }
+}
