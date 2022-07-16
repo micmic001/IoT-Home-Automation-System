@@ -10,16 +10,64 @@
         <script src="./bootstrap.min.js"></script>
         <script src="./popper.min.js"></script>
     </head>
-    <body>
-        <div class="container-fluid color2 global-height">
-            <div class="row">
-                <div class="col-md-2 color1">test</div>
-                <div class="col-md-6 color4">test</div>
-                <div class="col-md-3 color6">test</div>
+    <body id="body">
+        <div class="wrapper">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Home Automation System</h3>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#" class="margin-auto sidebar-text"><i class="fa fa-home" aria-hidden="true"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="margin-auto sidebar-text"><i class="fa fa-sticky-note" aria-hidden="true"></i>Logs</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="content">
+                <nav class="navbar navbar-expand-lg navbar-light global-width">
+                    <div class="container-fluid">
+                        <div>
+                            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                                <i class="fas fa-align-left"></i>
+                                <span>Toggle Sidebar</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" id="envColor" class="btn btn-primary">
+                                <i class="fas fa-align-left"></i>
+                                <span>Toggle Light/Dark</span>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                <h1>Hakdogggggg</h1>
+                </div>
             </div>
         </div>
     </body>
     <script type="text/javascript">
-
+        $(document).ready(function () {
+            let toggleVal = localStorage.getItem('menu') || 0;
+            if(toggleVal == 1){$('#sidebar').show();}
+            else if(toggleVal == 0){$('#sidebar').hide();}
+                $('#sidebarCollapse').on('click', function () {
+                    if(toggleVal == 0 || toggleVal == null){
+                        $('#sidebar').toggleClass('active');
+                        toggleVal=1;
+                        localStorage.setItem("menu", 1);
+                    }
+                    else{
+                        $('#sidebar').toggleClass('active');
+                        toggleVal=0;
+                        localStorage.setItem("menu", 0);
+                    }
+                });
+                $('#envColor').on('click', function () {
+                    $('#body').toggleClass('night');
+                });
+            });
     </script>
 </html>
